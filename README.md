@@ -1,6 +1,7 @@
-# Jquery::Multi::Typeahead::Rails
+Jquery::Multi::Typeahead::Rails
+===============
 
-TODO: Write a gem description
+Integrates the [jquery-multi-typeahead] plugin with the asset pipeline
 
 ## Installation
 
@@ -18,7 +19,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: [Examples][jquery-multi-typeahead]
+
+    #application.js
+    //= require multi-typeahead
+
+
+Depends on:
+----------
+* [jQuery]
+* [Bootstrap]
+* [typeahead.js]
+
+Features:
+----------
+* Multiple typeaheads
+* Remote sources (like typeahead.js)
+* Tokenize (allows only existing entries)
+* Flat-UI-Pro classes
+* ...
+
+Version
+--------
+0.0.1
 
 ## Contributing
 
@@ -27,3 +50,16 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+
+## License
+MIT License, full text of license see [here][License]
+
+*Free Software, Fuck Yeah!*
+
+[License]: https://github.com/kendrikat/jquery-multi-typeahead-rails/blob/master/LICENSE.txt "LICENSE"
+[jQuery]: https://github.com/jquery/jquery
+[Bootstrap]: https://github.com/twitter/bootstrap
+[typeahead.js]: https://github.com/twitter/typeahead.js
+[jquery-multi-typeahead]: https://github.com/kendrikat/jquery-multi-typeahead
