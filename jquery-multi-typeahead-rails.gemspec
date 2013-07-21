@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Jquery::Multi::Typeahead::Rails::VERSION
   gem.authors       = ["Klaas Endrikat"]
   gem.email         = ["klaas.endrikat@googlemail.com"]
-  gem.description   = %q{Integrates the jquery-multi-typeahead plugin to the asset pipeline}
+  gem.description   = %q{Integrates the jquery-multi-typeahead plugin with the asset pipeline}
   gem.summary       = %q{Use tags/tokens with typeahead support}
   gem.homepage      = "https://github.com/kendrikat/jquery-multi-typeahead-rails"
 
