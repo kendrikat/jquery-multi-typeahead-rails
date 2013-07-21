@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["klaas.endrikat@googlemail.com"]
   gem.description   = %q{Integrates the jquery-multi-typeahead plugin with the asset pipeline}
   gem.summary       = %q{Use tags/tokens with typeahead support}
+  gem.license       = 'MIT'
   gem.homepage      = "https://github.com/kendrikat/jquery-multi-typeahead-rails"
 
   gem.files         = `git ls-files`.split($/)
