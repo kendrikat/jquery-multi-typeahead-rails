@@ -1,7 +1,7 @@
 /*
- * multi-typeahead.js v0.1
+ * multi-typeahead.js v0.1.1
  *
- * jQuery Multi Typeahead Plugin v0.1.0
+ * jQuery Multi Typeahead Plugin v0.1.1
  * https://github.com/kendrikat/jquery-multi-typeahead.js
  *
  * Copyright 2013 Klaas Endrikat
@@ -29,7 +29,8 @@
         tokenizer: false,
         local: "",
         prefill: "",
-        fixed: false
+        fixed: false,
+        delimiter: [",", " "]
     }
 
     $.addTag = function (value) {
@@ -90,17 +91,22 @@
             $.refresh();
         });
 
-        typeaheadInput.bind('keydown', function (e) {
-            var code = (e.keyCode ? e.keyCode : e.which);
+        typeaheadInput.keypress(function (e) {
+            var consume = true;
+            var code = (e.charCode ? e.charCode : e.which);
             if (code == 8 && typeaheadInput.val().length == 0) {
                 typeaheadContainer.find('span.tag').last().remove();
                 $.refresh();
             }
-            if (!multiTypeaheadOptions.tokenizer) {
-                if (code == 13 && typeaheadInput.val().length > 0 && !typeaheadContainer.find('.tt-dropdown-menu').is(':visible')) {
-                    $.addTag(typeaheadInput.val());
-                }
+            if (!multiTypeaheadOptions.tokenizer && typeaheadInput.val().length > 0 && !typeaheadContainer.find('.tt-dropdown-menu').is(':visible')) {
+                $.each(multiTypeaheadOptions.delimiter, function () {
+                    if (code == this.charCodeAt(0) || code == 13) {
+                        $.addTag(typeaheadInput.val().replace(this, '').trim());
+                        consume = false;
+                    }
+                });
             }
+            return consume;
         });
 
         if (!multiTypeaheadOptions.tokenizer) {
